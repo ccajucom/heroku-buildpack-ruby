@@ -2,10 +2,8 @@
 
 $:.unshift File.expand_path("../../lib", __FILE__)
 require "language_pack"
-require 'fileutils'
 
-build_path = ARGV.first
-FileUtils.mv("#{build_path}/WLC/*", "#{build_path}/")
+build_path = "#{ARGV.first}/WLC/"
 
 if pack = LanguagePack.detect(build_path)
   puts pack.name
